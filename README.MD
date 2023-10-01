@@ -7,8 +7,8 @@
 - Setting option so that user can change typing setting according to own
 
 ## Reference Images:
-![Alt text](img3.png)
+![Alt text](refimg/img3.png)
 ---
-![Alt text](image-2.png) 
+![Alt text](refimg/image-2.png) 
 ---
-![Alt text](image-1.png)
+![Alt text](refimg/image-1.png)
