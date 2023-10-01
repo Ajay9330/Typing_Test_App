@@ -1,0 +1,199 @@
+
+*{
+  border: #ccc;
+}
+body{
+  padding: none;
+  margin: 0;
+/* 
+  overflow: hidden; */
+  background-color: #ec9b9b;
+}
+#fkeboard{
+  background-color:var(--kb);
+  height: calc(100vw * 0.35 );
+  max-height: calc(55vh - 70px);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction:column;
+}
+#keyboard {
+
+    /* position:absolute; */
+   
+    user-select: none; /* Disable text selection */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none; /* Disable copy on long press */
+    /* max-height: 400px;
+    height:calc(40vw);
+    min-width: 200px; */
+
+     background-color:var(--kb);
+    border: 1px solid #050505;
+    padding: 10px;
+    display: grid;
+    grid-gap: 5px;
+    /* resize: auto; */
+    overflow: auto;
+    height: 90%;
+    width: 90%;
+
+
+  }
+  
+  .row {
+    
+    animation: kbplate 4s linear  infinite alternate;
+    border: none;
+    justify-content: space-between;
+    display: flex;
+    /* flex: 2 3 200px; */
+  }
+  
+  .key {
+    /* background-color: white; */
+    opacity: 0.8;
+    border: 1px solid #010101;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    width: 6.666666666666667%;
+    min-height: 4px;
+    font-size: calc(2px + 2vw);
+    box-sizing: border-box;
+    background-color: var(--keybg);
+    color: var(--keyc);
+    margin:0px 1px 0px 1px;
+    animation: keyanim 4s linear  infinite alternate;
+    justify-self: center;
+  }
+  
+  .Space {
+    width: 46.666666666666664%;
+  }
+  
+  .Control {
+    width: 13.333333333333334%;
+  }
+  
+  .Backspace {
+    width: 13.333333333333334%;
+  }
+  
+  .Shift{
+    width: 16.666666666666668%;
+  }
+  
+  .Tab {
+    width: 13.333333333333334%;
+  }
+  
+  .Capslock{
+    width: 15%;
+  }
+  
+  .enter-key {
+    width: 11.666666666666666%;
+  }
+  
+  .uppercase-key {
+    text-align: left;
+    padding-left: 5px;
+  }
+  
+  .key:hover {
+    background-color: var(--keyact);
+  }
+  
+  .key.active {
+    background-color: var(--keyact);
+    box-shadow: 0px 0px 12px 2px;
+    z-index: 1;
+  }
+  #mpos{
+    margin: auto;
+    height: 12px;
+    border:1px solid;
+    width:50%;
+    background-color: rebeccapurple;
+    height: 15px;
+    cursor: grab;
+    animation: kbplate 4s linear  infinite alternate;
+  
+   
+  }
+  #mpos:active{
+    background-color: #a9a9a9;
+    cursor: grabbing;
+    
+   
+  }
+
+  @keyframes kbplate {
+    0% {
+      box-shadow: 0px 0px 11px 4px rgb(11, 11, 216);
+    }
+    25% {
+      box-shadow: 0px 0px 11px 4px rgb(51, 255, 0);
+    }
+    50% {
+      box-shadow: 0px 0px 11px 4px rgb(255, 0, 0);
+    }
+    75% {
+      box-shadow: 0px 0px 11px 4px rgb(255, 255, 0);
+    }
+    100% {
+      box-shadow: 0px 0px 11px 4px rgb(0, 255, 255);
+    }
+  }
+  
+  @keyframes keyanim {
+    0% {
+      box-shadow:  0px 0px 5px rgb(11, 11, 216);
+    }
+    25% {
+      
+      box-shadow:  0px 0px 5px rgb(51, 255, 0);
+     
+    }
+    50% {
+      box-shadow:  0px 0px 5px rgb(255, 0, 0);
+    }
+    75% {
+      box-shadow:  0px 0px 5px rgb(255, 255, 0);
+     
+    }
+    100% {
+
+      box-shadow:  0px 0px 5px rgb(0, 255, 255);
+    }
+  }
+
+
+  @media (max-width: 525px) {
+    #fkeboard{
+      max-height: 300px; /* Change max-height to 300px for smaller devices */
+      height: calc(30vh); /* You can use 100% here instead of 100vw if desired */
+    }
+    #keyboard {
+      height: 700px;
+    }
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }

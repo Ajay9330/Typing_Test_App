@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing-App</title>
+    <link rel="stylesheet" href="appstyle.css">
+    <link rel="stylesheet" href="keystyle.css">
+   
+</head>
+<body>
+    <h1 id="msg" class="hidemsg"></h1>
+    <div id="nav">
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <p style="background-color: rgba(78, 80, 80, 0.629);">
+                    <LABel>
+                        CTRL+B for Theme Change(8 Themes)
+                    </LABel>
+                    <br>
+                    <LABel>
+                        CTRL+Shift for RGB Level Change (3 Levels)
+                    </LABel>
+    
+                </p>
+               
+                <label for="lop">No of paragraph:
+                    <input type="number" value=3 name="lop" id="lop">
+                </label>
+                
+                <label for="mode">Mode:
+                    <select name="" id="text-mode">
+                    <option selected value="Default">Default text</option>
+                    <option value="Random text">RandomText</option>
+                    <option value="Fixed-Text">Fixed-Text</option>
+                  
+                </select></label>
+                
+           
+                <label for="rgb">RGB:<input type="radio" id="rgbOn" name="rgb" onchange="setRGB(true)" checked>
+                    <label for="rgbOn">ON</label>
+                    <input type="radio" id="rgbOff" name="rgb" onchange="setRGB(false)">
+                    <label for="rgbOff">OFF</label>
+                    <br>
+                    <label for="mpos">RGB Speed
+                        <input id='i' type="range" min="1" max="100"  onchange='changeRGBspeed(this)'>
+<button onclick='resetRGBspeed()'>Reset</button>
+                    </label>
+                </label>
+                
+            
+                
+                <div id="mpos">
+                </div>
+            </div>
+          
+          </div>
+          
+          <!-- Use any element to open/show the overlay navigation menu -->
+        <span id="setting" onclick="openNav()">	
+            &#9881; </span>
+
+        <div class="speedaccuracy">
+            <span>Speed:</span>
+            <span id="speed">0</span>
+        </div>
+        <div class="speedaccuracy">
+            <span>Accuracy:</span>
+            <span id="accuracy">0</span>
+        </div>
+        
+    </div>
+    <div id="txt">
+
+    </div>
+    <div id="btnbar">
+        <button id="start" onclick="startgame(this)">Start Test</button>
+        <button id="end" onclick="endgame(this)">End Test</button>
+        <!-- <button id="f">focus on the 1</button> -->
+        <p id="current-word" class="current-word"></p>
+ 
+        
+    </div>
+   
+
+    <div id="fkeboard">
+        
+        <div id="keyboard">
+        
+        </div>
+
+    </div>
+    
+    <script src="app.js"></script>
+    
+</body>
+
+</html>

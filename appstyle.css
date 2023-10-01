@@ -1,0 +1,318 @@
+
+:root{
+
+    --kb: #26262a;     
+  --keybg: #000000; 
+  --keyc: #ffffff;   
+  --keyactbg: #000000; 
+  --navbg: #250404;
+  --txtbg: #3c393e;  
+  --btnb: #272828;   
+  --curc: #1c6aaa;    
+  --txtcolor: #e8f3f0; 
+
+  /* --kb: #26262a;     
+  --keybg: #000000; 
+  --keyc: #ffffff;   
+  --keyactbg: #000000; 
+  --navbg: #250404;
+  --txtbg: #3c393e;  
+  --btnb: #272828;   
+  --curc: #1c6aaa;    
+  --txtcolor: #e8f3f0;  */
+
+/* 
+  --kb: #272728;     
+  --keybg: #000000; 
+  --keyc: #ececf6;   
+  --keyactbg: #292224; 
+  --navbg: #250404;
+  --txtbg: #BDE0FE;  
+  --btnb: #171819;   
+  --curc: #1c6aaa;    
+  --txtcolor: #2a2424;  */
+  
+    /* --kb:#f2f2f2; */
+
+    /* --kb: #CDB4DB;
+    --keybg: #FFC8DD;
+    --keyc: #2805db;
+    --keyactbg: #FFAFCC;
+    --navbg: #b35beea3;
+    --txtbg: #BDE0FE;
+    --btnb: #87929a;
+    --curc: #A2D2FF;
+    --txtcolor: #333333 */
+
+    
+    /* --kb: #bb73e4;     
+    --keybg: #bcbbbc; 
+    --keyc: #0c0c0e;   
+    --keyactbg: #292224; 
+    --navbg: #050505;
+    --txtbg: #BDE0FE;  
+    --btnb: #171819;   
+    --curc: #1c6aaa;    
+    --txtcolor: #977e7e;  */
+
+
+    
+    
+  }
+  html{
+    max-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  #msg{
+   
+    margin: 0px;
+    position: absolute;
+ 
+    width: 100%;
+    z-index: 3;
+    background-color: #91ff70;
+    color: #0037ff;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+  }
+.showmsg{
+  top:0;
+  height: 50px;
+}
+.hidemsg{
+  height: 0px;
+  top:0px;
+}
+
+  #nav > span {
+    display: block;
+    background-color: none;
+    padding: 5px;
+    border-radius: 45px;
+
+    font-size: 35px;
+    transition: transform .3s;
+    color: var(--txtcolor);
+  }
+  
+  #nav > span:active {
+   
+    transform: rotateZ(60deg);
+  }
+  
+  
+  
+  .overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow: hidden; /* Disable horizontal scroll */
+    transition: 0.6s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+
+
+*{
+    border: 1px solid;
+    user-select: none;
+}
+#nav{
+    font-size: large;
+    background-color: rgb(24, 49,bg 195);
+    background-color: var(--navbg);
+    box-shadow: inset 2px 3px 55px black;
+    display: flex;
+    color: rgb(206, 208, 153);
+    flex: 50px ;
+    height: 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+#txt {
+    background-color: var(--txtbg);
+    scroll-behavior:smooth;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: flex-start; */
+    align-content: flex-start;
+    /* height: calc(225px + 13vh - 5vw); */
+    height: calc(45vh - 50px);
+  }
+  
+#btnbar{
+    background-color: var(--btnb);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    max-width: calc(100% - 32px);
+    align-items: center;
+    padding: 0px 16px;
+    overflow: hidden;
+   
+}
+#keyboard{
+ border: none;
+}
+body{
+  margin: 4px;
+    
+    /* overflow: auto; */
+    /* display: none; */
+}
+#end{
+    display: none;
+}
+.word-txt{
+
+    font-size: calc(14px + 2vw);
+    /* margin:0px; */
+    /* background-color: aqua; */
+    margin: 5px;
+    border: none;
+    color: var(--txtcolor);
+
+}
+.wrong-word{
+    transition: color 2s, color 1s, opacity 0.5s;
+   color: red;
+  
+}
+.right-word{
+    transition: color 2s, color 1s, opacity 0.5s;
+   color: rgb(9, 255, 0);
+  
+}
+.current-word {
+    /* justify-self: flex-end;
+    display: inline-flex;
+    height: 20px;
+    width: 55px; */
+    margin: 0px;
+    color:var(--txtcolor);
+    background-color: var(--curc);
+    
+  }
+#current-word{
+    display: flex;
+    width: 10%;
+    min-width: 70px;
+    height: 54px;
+    max-height: 50px;
+    margin: auto;
+    overflow: auto;
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 27px;
+    align-items: center;
+    /* justify-content:last baseline; */
+    align-content: center;
+    flex-direction: row-reverse;
+    
+
+   
+}
+  
+
+button{
+    display: inline-block;
+    
+}
+button {
+  height: 40px;
+  background-color: #0b43fe;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  
+  box-shadow:0px 0px 4px 0px #818181 ;
+}
+
+/* Styling when the 'submit' button is hovered */
+button:hover {
+  background-color: #1c4ff4;
+}
+button:active{
+  background-color: #3669cf;
+  box-shadow:0px 0px 4px 2px #3a3939 ;
+
+}
+
+option{
+  transition: all 2s;
+  background-color: rgb(31, 11, 96);
+}
+option:hover{
+  background-color: #d4aeae;
+}
+select{
+
+  height: 25px;
+  color: rgb(255, 255, 255);
+  background-color: #31372f;
+
+}
+select:active{
+  background-color: #2ab806;
+
+}
+select:hover{
+
+  background-color: #3c3b3b;
+}
+select:focus-visible{
+  border: #0b43fe;
+  outline: #b80606;
+}
+
+
